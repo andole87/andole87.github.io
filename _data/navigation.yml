@@ -2,12 +2,12 @@
 main:
   # - title: "Quick-Start Guide"
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  - title: "여기엔"
-    url: /how
-  - title: "무얼"
-    url: /put
-  - title: "넣을까"
-    url: /there
+  # - title: "여기엔"
+  #   url: /how
+  # - title: "무얼"
+  #   url: /put
+  # - title: "넣을까"
+  #   url: /there
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
