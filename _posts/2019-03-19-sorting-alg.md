@@ -11,7 +11,7 @@ comments: true
 시간 복잡도는 O(n2)이다. 성능이 좋은 방법은 아니다.  
 어떻게 작동하냐면..  
 ![bubble sort](/../assets/BubbleSort_Avg_case.gif) 
-> 출처: [알고리즘도감](algorithm.wiki/ko/app/)  
+> 출처: [알고리즘도감](https://algorithm.wiki/ko/app/)  
 
 1. 배열을 순회하며 배열 끝에서부터, 반대 끝까지 두 요소를 선택한다.
 2. 두 요소를 비교한다.
