@@ -4,6 +4,8 @@ main:
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "알고리즘"
     url: /alg
+  - title: "WEB"
+    url: /web
   # - title: "js"
   #   url: /jscript
   # - title: ""

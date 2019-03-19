@@ -1,9 +1,24 @@
----
-layout: archive
----
-
 {{ content }}
 
-<div class="entries-{{ page.entries_layout }}">
-  {% include posts-category.html taxonomy=page.taxonomy type=page.entries_layout %}
-</div>
+{% assign category_max = site.categories[0].size %}
+{{ site.categories | array_to_sentence_string }}
+
+
+
+{% comment %} <ul class="taxonomy__index">    
+<li>
+    <a href="#{{ site.categories[0][0] | slugify }}">
+    <strong>{{ site.categories[0][0] }}</strong> <span class="taxonomy__count">{{ site.categories }}</span>
+    </a>
+</li>
+</ul>
+    
+<section id="{{ site.categories[0][0] | slugify | downcase }}" class="taxonomy__section">
+  <h2 class="archive__subtitle">{{ site.categories[0][0] }}</h2>
+  <div class="entries-{{ page.entries_layout | default: 'list' }}">
+    {% for post in site.categories[0].last %}
+      {% include archive-single.html type=page.entries_layout %}
+    {% endfor %}
+  </div>
+  <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+</section> {% endcomment %}
