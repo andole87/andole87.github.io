@@ -3,7 +3,7 @@ published: true
 layout: single
 title: "깃허브 블로그 만들기: minimal-mistakes 테마-2"
 category: posts
-tags:
+tags: jekyll
 comments: true
 ---
 minimal-mitakes 테마를 적용하고 설정을 변경하거나 일부 커스텀을 진행했다.
