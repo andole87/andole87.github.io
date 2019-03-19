@@ -2,10 +2,12 @@
 main:
   # - title: "Quick-Start Guide"
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  - title: "Archive"
+    url: /categories/
   - title: "알고리즘"
-    url: /alg
+    url: /alg/
   - title: "WEB"
-    url: /web
+    url: /web/
   # - title: "js"
   #   url: /jscript
   # - title: ""

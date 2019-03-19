@@ -1,6 +1,6 @@
 ---
-title: "알고리즘"
-layout: category
+title: "Algorithm"
+layout: category-alg
 permalink: /alg/
 author_profile: false
 ---
