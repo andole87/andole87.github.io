@@ -4,7 +4,7 @@ layout: single
 title: "깃허브 블로그 만들기: minimal-mistakes 테마-1"
 category: posts
 tags:
-comments: false
+comments: true
 ---
 
 깃허브 블로그를 만들어볼까 했다. 공짜 호스팅에다 *.github.io url, git으로 관리할 수 있으니까. 그동안 구경해둔 블로그들은 있었으므로, 원하는 형태는 있었다.
