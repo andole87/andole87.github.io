@@ -8,7 +8,8 @@ comments: true
 ---
 minimal-mitakes 테마를 적용하고 설정을 변경하거나 일부 커스텀을 진행했다.
 
-##minimal-mistakes 테마
+## minimal-mistakes 테마  
+
 [공식사이트](https://mmistakes.github.io/minimal-mistakes/)
 기본 모듈들이 잘 갖춰져 있고, 카테고리를 쉽게 나눌 수 있다. 
 
@@ -28,14 +29,14 @@ minimal-mitakes 테마를 적용하고 설정을 변경하거나 일부 커스�
 |-index.html    ## 메인 페이지
 ```
 
-터미널에서 프로젝트 폴더에서 jekyll serve 또는 bundle exec jekyll serve를 명령하면 로컬환경에서 블로그를 볼 수 있다.
+터미널에서 프로젝트 폴더로 이동한 다음, jekyll serve 또는 bundle exec jekyll serve를 명령하면 로컬환경에서 블로그를 볼 수 있다.
 ```bash
 $>jekyll serve
 $>bundle exec jekyll serve
 ```
 둘의 차이점은 가상환경을 이용하지 않느냐 이용하느냐다. 공식사이트에서는 bundler를 이용한 프로젝트 환경을 추천하고 있다.  
 
-##사이트 설정하기
+## 사이트 설정하기  
 프로젝트 루트에서 _config.yml을 열면 많은 항목들이 나온다. 각 항목에서 원하는 부분을 설정해주면 된다.
 나는 기본 프로필, 기본url, 댓글시스템, 애널리틱스, SEO를 설정했다.
 영어로 친절한 설명이 있다. 찬찬히 읽어보면서 나에게 맞게 바꿨다.
@@ -71,7 +72,7 @@ defaults:
 ```
 
 ## 사이트 너비 조정
-기본 테마에서는 two column 형식이다. 프로필이 좌측 작게 있고 본문이 오른쪽 넓게 들어간다. 나는 프로필을 꺼두었으니, 본문영역을 더 넓히고 싶었다.
+기본 테마는 two column 형식이다. 프로필이 좌측 작게 있고 본문이 오른쪽 넓게 들어간다. 나는 프로필을 꺼두었으니, 본문영역을 더 넓히고 싶었다.
 _sass 폴더의 page.scss 파일을 연다. 전체 경로는 [/_sass/minimal-mistakes/_page.scss]
 
 ```sass
@@ -103,7 +104,7 @@ _sass폴더 아래 mint.scss를 열고 다음 내용을 추가했다. 전체경�
 
 ## 포스팅
 _posts폴더 아래에 'yyyy-mm-dd-포스트제목.md'파일을 생성한다.
-jekyll은 각 포스트마다 맨 처음에 **프론트매터**라는 것을 넣어줘야 한다. 이유는 jekyll이 사이트를 빌드할 때, 프론트매터를 기준으로 포스트들을 빌드하기 때문이다. 그래서 데이터베이스가 없어도 페이지간 링크나 인터랙션이 가능한 것이다.
+jekyll은 각 포스트마다 맨 처음에 **프론트매터**라는 것을 넣어줘야 한다. 이유는 jekyll이 사이트를 빌드할 때, 프론트매터를 기준으로 포스트들을 빌드하기 때문이다. 그래서 데이터베이스가 없어도 페이지간 링크나 카테고라이징, 태깅, 인터랙션이 가능한 것이다.
 minimal-mistakes의 프론트매터는 다음과 같다.
 ```ruby
 ---
@@ -116,5 +117,5 @@ comments:       ## 댓글 기능
 ---
 ```
 
-위 프론트매터 다음부터, 마크다운 문법에 따라 맘대로 글을 쓰고, 깃헙에 푸시하면 된다. 깃허브 pages기능이 온 되어 있으면 깃허브가 jekyll을 빌드해 요청에 응답하게 된다.
-[마크다운 치트시트](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+위 프론트매터 다음부터, 마크다운 문법에 따라 [(마크다운 치트시트)](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) 맘대로 글을 쓰고, 깃헙에 푸시하면 된다. 깃허브 pages기능이 온 되어 있으면 깃허브가 jekyll을 빌드해 요청에 응답하게 된다.
+
