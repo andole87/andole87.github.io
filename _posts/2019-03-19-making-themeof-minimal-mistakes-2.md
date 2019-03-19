@@ -74,23 +74,34 @@ defaults:
 기본 테마는 two column 형식이다. 프로필이 좌측 작게 있고 본문이 오른쪽 넓게 들어간다. 나는 프로필을 꺼두었으니, 본문영역을 더 넓히고 싶었다.
 _sass 폴더의 page.scss 파일을 연다. 전체 경로는 [/_sass/minimal-mistakes/_page.scss]
 
-```sass
+```scss
 @include breakpoint($large) {
     float: right;
     width: calc(100% - #{$right-sidebar-width-narrow});
-    padding-right: $right-sidebar-width-narrow;         //기존
-
-    padding-right: calc($right-sidebar-width-narrow);   //변경
+    padding-right: $right-sidebar-width-narrow;
   }
 
 @include breakpoint($x-large) {
-    width: calc(100% - #{$right-sidebar-width});        //기존
-    padding-right: $right-sidebar-width;                //기존
+    width: calc(100% - #{$right-sidebar-width});        
+    padding-right: $right-sidebar-width;                
+```
+보아하니 미디어쿼리에 따른 변수항목이 있고 이에 따라 width를 바꾸는 것 같다. 그럼 여기서 바꾸는 것 보다, 변수 자체를 바꾸는게 낫겠다.
 
-    width: calc(100% - #{$right-sidebar-width}+100px);  //변경
-    padding-right: $right-sidebar-width - 100px;        //변경
-````
-100px씩 왼쪽, 오른쪽으로 넓혔다.
+_sass 폴더의 _variables.scss 파일에 기본값 변수들이 있었다. 전체경로는 [_sass/minimal-mistakes/_variables.scss]
+
+```scss
+/*
+   Grid
+   ========================================================================== */
+
+// $right-sidebar-width-narrow: 200px !default;
+$right-sidebar-width-narrow: 50px !default;
+// $right-sidebar-width: 300px !default;
+$right-sidebar-width: 70px !default;
+// $right-sidebar-width-wide: 400px !default;
+$right-sidebar-width-wide: 200px !default;
+```
+기본값으로 200, 300, 400px로 주어졌다. 내맘대로 줄였다.
 
 ## 민트 테마 커스텀
 위 _config.yml에서 선택한 mint테마는 링크 버튼만 민트색으로 바꿔준다. 포스트 제목도 민트색으로 바꾸고 싶었다.
