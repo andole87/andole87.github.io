@@ -94,7 +94,7 @@ bool nor(bool A, bool B){
 ![xor-mixed](/../assets/254px_3gate_XOR.jpg)
 
 - 구현
-```c
+```cpp
 bool xor(bool A, bool B){
     bool answer;
     answer = (!(A && B) && (A || B));
