@@ -148,8 +148,7 @@ bool *fulladder(bool A, bool B, bool carry){
 ```
 
 ## 가산기(바이트)
-> 전가산기, 반가산기를 응용해서 바이트 덧셈기를 만들어본다.
-> lsb(leas significant bit)는 배열의 첫번째 요소다. 1011 -> 1, 1, 0, 1
+> 전가산기를 응용해서 바이트 덧셈기를 만들어본다.
 
 ```cpp
 bool *byteAdder(bool byteA[], bool byteB[]){
