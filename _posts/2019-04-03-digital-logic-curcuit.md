@@ -104,11 +104,15 @@ bool xor(bool A, bool B){
 ## 이진 덧셈기
 
 ### 반가산기
-![반가산기](/../assets/step1-halfadder.png)
+![반가산기](/../assets/step1-halfadder.png)  
+
+
 | 합 | 0 | 1 |
 |----|---|---|
 | 0  | 0 | 1 |
 | 1  | 1 | 0 |
+
+
 
 | 자리올림 | 0 | 1 |
 |----------|---|---|
@@ -117,12 +121,12 @@ bool xor(bool A, bool B){
 
 - 구현
 ```cpp
-bool halfadder(bool A, bool B){
+bool *halfadder(bool A, bool B){
     bool answer[] = {0,0};
     answer[0] = xor(A,B);
     answer[1] = (A && B);
     
-    return answer;
+    return *answer;
 }
 ```
 
@@ -130,14 +134,35 @@ bool halfadder(bool A, bool B){
 ![전가산기](/../assets/step1-fulladder-symbol.png)
 
 ```cpp
-bool fulladder(bool A, bool B, bool carry){
-    bool answer[];
+bool *fulladder(bool A, bool B, bool carry){
+    bool answer[] = {0,0};
 
     bool S = xor(A, B);
     bool C = A && B;
 
     answer[0] = xor(A, B);
     answer[1] = (B && carry) || carry;
+
+    return answer;
+}
+```
+
+## 가산기(바이트)
+> 전가산기, 반가산기를 응용해서 바이트 덧셈기를 만들어본다.
+> lsb(leas significant bit)는 배열의 첫번째 요소다. 1011 -> 1, 1, 0, 1
+
+```cpp
+bool *byteAdder(bool byteA[], bool byteB[]){
+    bool *answer = new bool[8];
+    bool *carry = new bool[9];
+    bool *temp = new bool[2];
+
+    carry[0] = false;
+    for (int i = 0; i < 8; i++){
+        temp = fulladder(byteA[i], byteB[i], carry[i]);
+        carry[i+1] = temp[0];
+        answer[i] = temp[1];
+    }
 
     return answer;
 }
