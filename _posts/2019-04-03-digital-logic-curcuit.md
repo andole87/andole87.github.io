@@ -101,6 +101,7 @@ bool xor(bool A, bool B){
     return answer;
 }
 ```
+
 ## 이진 덧셈기
 
 ### 반가산기
