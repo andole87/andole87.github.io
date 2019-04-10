@@ -16,7 +16,7 @@ git은 커밋을 단위로 스냅샷을 관리한다. 이를 위해 git은 세�
 working tree, stage area, commit이 그것이다.  
 
 
-![깃 구성](../assets/areas.png)
+![깃 구성](/../assets/areas.png)
 >출처: 프로깃
 - working tree  
 실제 작업 공간이다. 파일을 새로 만들거나, 소스를 변경한 것은 working tree에 있다.
@@ -76,14 +76,14 @@ rebase나 히스토리 정리할때 자주 쓰인다.
 각 이슈에 맞게 브랜치를 나누어 진행하던 프로젝트가 완성되었다. 완성본을 위해서는 브랜치를 합쳐야 한다. Merge로 브랜치들을 합칠 수 있다.  
 Merge는 두가지 종류가 있다.  
 - fast-forward
-![fast](../assets/basic-branching-5.png)
+![fast](/../assets/basic-branching-5.png)
 
 
 fast-forward는 앞으로 가기라는 뜻이다. 단순히 master의 HEAD를 앞으로 옮기기만 한다.  
 충돌이 일어날 일이 없고 안전한 방식이다.
 
 - 3way-merge
-![3way](../assets/basic-merging-2.png)
+![3way](/../assets/basic-merging-2.png)
 
 각 브랜치가 각자 진행사항이 있다. 이 때 같은 요소를 두 브랜치에서 변경하였다면 충돌(conflict)가 발생한다.  
 충돌이 발생하면 수동으로 해결하기, 기본 브랜치로 해결하기, 머징 브랜치로 해결하기 3가지 방법이 있다.
