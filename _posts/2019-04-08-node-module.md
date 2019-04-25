@@ -1,5 +1,10 @@
-# Modules
-
+---
+published: true
+layout: single
+title: "Node.js의 모듈 시스템"
+category: TIL
+comments: true
+---
 노드의 모듈 시스템에서는, 각 파일은 분리된 모듈로 취급된다.  
 예를 들면, foo.js라는 파일을 생각해 보자.  
 ```javascript
