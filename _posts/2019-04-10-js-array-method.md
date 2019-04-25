@@ -65,7 +65,7 @@ console.log(array)
 새로운 배열을 리턴하기 때문에 메서드 체이닝이 가능하며 권장된다.
 
 ### filter
-filter 메서드는 배열을 순회하며 callback에 맞는 값만 필터링한 **새로운 배열**을 리턴한다.
+filter 메서드는 배열을 순회하며 callback에 맞는 값만 필터링한 **새로운 배열**을 리턴한다.  
 `filter(callback(current value, index, array),thisArg)`
 callback을 통과한 요소들로 이루어진 새로운 배열을 리턴한다.
 ```js
