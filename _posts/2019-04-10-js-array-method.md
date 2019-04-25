@@ -23,7 +23,8 @@ for문과 비슷하게 쓰일 수 있다. for문과의 다른점은
 - 순회할 index를 선언하지 않아도 된다. 인덱스변수의 스코프를 신경쓰지 않아도 된다.
 - 모든 요소에 callback을 실행할 것을 보장한다. for문에서 경계조건을 잘못 설정하는 실수를 걱정하지 않아도 된다.
 - **도중에 중단할 수 없다**. for문은 break 등으로 반복을 제어할 수 있지만, forEach는 원칙적으로 도중에 중단할 수 없다. (에러를 발생시켜 멈추게 할 수 있긴 하나, 권장되지 않는다.)
-- this 바인딩이 가능하다. 유연한 동작이 가능하게 된다.  
+- this 바인딩이 가능하다. 유연한 동작이 가능하다.  
+ 
 ```js
 array = [1,2,3,4,5];
 // arrow function
@@ -42,6 +43,7 @@ array.forEach( function (element, index, arr){
 console.log(array)
 // [4,8,12,16,20]
 ```
+
 기억해야 할 것은 반환값이 **undifined**인 것. 때문에 메서드 체이닝 중간에 쓰면 안된다.  
 
 ### map
@@ -59,6 +61,7 @@ array.map( (element,index,arr) => arr[index] = element*2) )
 console.log(array)
 // [4,8,12,16,20]
 ```
+
 새로운 배열을 리턴하기 때문에 메서드 체이닝이 가능하며 권장된다.
 
 ### filter
@@ -72,6 +75,7 @@ array.filter( (element, index, arr) => element % 2 === 0)
 console.log(array)
 // [1,2,3,4,5]
 ```
+
 역시 새로운 배열을 리턴하기 때문에 메서드 체이닝이 가능하다.
 
 ### reduce
