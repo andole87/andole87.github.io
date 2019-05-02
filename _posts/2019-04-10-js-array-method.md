@@ -16,7 +16,7 @@ comments: true
 js의 Array prototype에는 `forEach`라는 메서드가 존재한다. 배열의 모든 요소를 순회하며 콜백을 실행하는 메서드다. 
 ```js
 Array.forEach( callback, [thisArg])
-// 반환값은 undifined
+// 반환값은 undefined
 ```
 callback은 **요소 값**, **현재 인덱스**, **순회중인 배열**을 인자로 받는다.  
 for문과 비슷하게 쓰일 수 있다. for문과의 다른점은  
@@ -31,7 +31,7 @@ array = [1,2,3,4,5];
 array.forEach( (element, index, arr) =>{
     arr[index] = element * 2;
 })
-// 반환값은 undifined.
+// 반환값은 undefined.
 console.log(array)
 // [2,4,6,8,10]
 
@@ -39,12 +39,12 @@ console.log(array)
 array.forEach( function (element, index, arr){
     this[index] = element * 2;
 },array)
-// 반환값은 undifined
+// 반환값은 undefined
 console.log(array)
 // [4,8,12,16,20]
 ```
 
-기억해야 할 것은 반환값이 **undifined**인 것. 때문에 메서드 체이닝 중간에 쓰면 안된다.  
+기억해야 할 것은 반환값이 **undefined**인 것. 때문에 메서드 체이닝 중간에 쓰면 안된다.  
 
 ### map
 map 메서드는 배열을 순회하며 callback을 실행한 **새로운 배열**을 리턴한다.  
