@@ -57,9 +57,9 @@ console.log(array)
 // [1,2,3,4,5]
 // 기존 배열을 바꾸고 싶다면 this바인딩이나 배열인자를 이용할 수 있다.
 array.map( (element,index,arr) => arr[index] = element*2) )
-// [4,8,12,16,20]
+// [2,4,6,8,10]
 console.log(array)
-// [4,8,12,16,20]
+// [2,4,6,8,10]
 ```
 
 새로운 배열을 리턴하기 때문에 메서드 체이닝이 가능하며 권장된다.
@@ -81,7 +81,7 @@ console.log(array)
 ### reduce
 reduce 메서드는 배열을 순회하며 **새로운 형태의 결과**를 리턴한다.  
 reduce는 '줄이다'는 영어단어다. 고차원의 형태를 쪼개어 저차원으로 반환하는 의미로 해석할 수 있다.  
-예컨대 배열을 String으로 바꾼다던지, 2차원 배열을 1차원 배열로 바꾼다던지, 배열을 객체로 바꾼다던지.....등등.
+예컨대 배열을 String으로 바꾼다던지, 2차원 배열을 1차원 배열로 바꾼다던지, 배열을 객체로 바꾼다던지.....등등.  
 `reduce( (accumulator, current value, index, arr), initialValue)`
 callback의 `accumulator`에 집중해보자. `accumulator`는 누산기라는 뜻으로, 배열을 순회하면서 `accumulatror`에 콜백의 결과를 **누적**시킨다. 때문에 `initialValue`에 String을 넣으면 반환값이 String, 배열을 주면 배열로, 객체를 주면 객체가 리턴된다. `initialValue`를 생략하면 배열의 첫 요소와 같아진다.
 ```js
