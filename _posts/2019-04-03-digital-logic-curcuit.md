@@ -2,7 +2,7 @@
 published: true
 layout: single
 title: "디지털 논리회로 - 컴퓨터는 어떻게 덧셈을 계산할까?"
-category: TIL
+category: CS
 comments: true
 ---
 

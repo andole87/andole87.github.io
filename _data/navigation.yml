@@ -8,6 +8,8 @@ main:
     url: /idea/
   - title: CS
     url: /cs/
+  - title: Git
+    url: /git/
   - title: "TIL"
     url: /til/
   # - title: ""
