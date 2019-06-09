@@ -10,6 +10,8 @@ main:
     url: /cs/
   - title: Git
     url: /git/
+  - title: Project
+    url: /project/
   - title: "TIL"
     url: /til/
   # - title: ""
