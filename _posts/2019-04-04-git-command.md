@@ -2,7 +2,7 @@
 published: true
 layout: single
 title: "git - 초급"
-category: TIL
+category: Git
 comments: true
 ---
 
