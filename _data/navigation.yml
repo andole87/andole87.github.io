@@ -6,10 +6,8 @@ main:
     url: /categories/
   - title: Idea
     url: /idea/
-  - title: "알고리즘"
-    url: /alg/
-  - title: "WEB"
-    url: /web/
+  - title: CS
+    url: /cs/
   - title: "TIL"
     url: /til/
   # - title: ""
