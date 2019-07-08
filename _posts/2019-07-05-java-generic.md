@@ -9,7 +9,7 @@ comments: true
 제네릭을 자주 썼었다. 특히 컬렉션에서. `List<T> list = new ArrayList<>()`...  
 이펙티브 자바 item 28을 보고 몇가지 실험을 해 봤다.
 
-### [item 28] Use bounded wild cards to increase API flexiblility
+### [item 28] Use bounded wildcards to increase API flexiblility
 > 요약: API 유연성을 높이기 위해서 한정적 와일드카드를 사용하라.  
 > When **P**roducer, use <? **e**xtends T>. When **C**onsumer, use <? **s**uper T>  
 > 생산자일때는 extends, 소비자일때는 super
