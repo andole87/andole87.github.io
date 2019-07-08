@@ -134,7 +134,7 @@ public int sum(List list) {
 
 ```java
 Animal cat = new Cat();
-Cat cat = new Animail(); // 이건 안됨
+Cat cat = new Animal(); // 이건 안됨
 ```
 
 컴파일러는 `cat`을 무슨 타입으로 이해하고 있을까? Animal? Cat? **Animal**이다. 
