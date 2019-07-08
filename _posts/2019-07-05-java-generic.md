@@ -14,7 +14,7 @@ comments: true
 > When **P**roducer, use <? **e**xtends T>. When **C**onsumer, use <? **s**uper T>  
 > 생산자일때는 extends, 소비자일때는 super
 
-생산자, 소비자를 봤을 때 OS에서 말하는 그 생산자 소비자인줄 알았다. [생산자-소비자 문제]([https://ko.wikipedia.org/wiki/%EC%83%9D%EC%82%B0%EC%9E%90-%EC%86%8C%EB%B9%84%EC%9E%90_%EB%AC%B8%EC%A0%9C](https://ko.wikipedia.org/wiki/생산자-소비자_문제))  
+생산자, 소비자를 봤을 때 OS에서 말하는 그 생산자 소비자인줄 알았다. [생산자-소비자 문제](https://ko.wikipedia.org/wiki/생산자-소비자_문제)  
 여기서 말하는 생산자 소비자는 조금 의미가 다르다.
 
 - 생산자
@@ -84,8 +84,8 @@ List<? extends B> list = new ArrayList<>();
 
 ### type erasure
 
-타입 소거라고 부를 수 있겠다. 제네릭 형인자는 컴파일 이후 사라진다.   
-무슨 말이냐면, 제네릭은 컴파일 타임에 `type-safety`를 보장하기 위한 기능이다!!! 제네릭 자체가 런타임에 타입 체크를 하는게 아니라는 말이다.
+타입 소거라고 부를 수 있겠다. 제네릭 형인자는 컴파일 이후 사라진다.    
+즉, 제네릭은 컴파일 타임에 `type-safety`를 보장하기 위한 기능이다. 제네릭 자체가 런타임에 다른 동작을 하는게 아니라는 말이다.
 
 ```java
 // 컴파일 이전
@@ -123,9 +123,10 @@ public int sum(List list) {
 }
 ```
 
-자, 위의 list를 sum()의 인자로 넣고 실행해보자. 어떻게 될까? 당연하게도 에러가 난다. 모든 요소에 `+` 연산자로 연산하려 했는데 String, Object는 `+` 연산을 지원하지 않는다. 
+자, 위의 list를 sum()의 인자로 넣고 실행해보자. 어떻게 될까? 당연하게도 에러가 난다. 모든 요소에 `+` 연산자로 연산하려 했는데 Object는 `+` 연산을 지원하지 않는다. 
 
-제네릭이 없다면 모든 메서드 부분에 try-catch해주거나 타입 체크를 해야 할지도 모른다. 제네릭을 사용하여 형인자 T를 **컴파일러가** 체크하는 것이다. 런타임에는 아무 상관 없다.
+그렇다면 런타임 동작을 방어하기 위해서 모든 메서드 부분에 try-catch해주거나 타입 체크를 해야 할지도 모른다. 제네릭은 이래서 나왔다. 런타임에 복잡하게 타입 체크를 하지 않아도, type-safety를 보장한다. 오류의 여지가 있으면 컴파일 타임에 보고하도록 하는 것!  
+즉, 제네릭을 사용하여 형인자 T를 **컴파일러가** 체크하는 것이다. 런타임에는 아무 상관 없다.
 
 
 
@@ -138,7 +139,7 @@ Cat cat = new Animail(); // 이건 안됨
 
 컴파일러는 `cat`을 무슨 타입으로 이해하고 있을까? Animal? Cat? **Animal**이다. 
 
-위 `<? super T>` 부분에서, C는 B의 서브타입인데 왜 들어가지?에 대한 힌트가 될 수 있다.
+위 `<? super T>` 부분에서, C는 B의 서브타입인데 왜 들어가지?에 대한 힌트다.
 
 ```java
 List<? super B> list = new ArrayList<>();
@@ -163,7 +164,7 @@ List<? extends B> list = new ArrayList<>();
 
 왜 `extends`는 안될까? **위계관계에 있는 A,B,C 외 다른 모든 것을 넣어봐도 안 될** 것이다. `null`을 제외하고.
 
-컴파일러는 위 행동을 **금지하는** 것이다. 컴파일 타임에 `type-safety`를 보장할 수 없으니까!!  
+컴파일러는 위 행동을 **금지하는** 것이다. 컴파일 타임에 `type-safety`를 보장할 수 없으니까.  
 `<? extends B>` list에 B의 서브타입을 `add`하는 것을 허용하고 컴파일 해준다고 생각해보자.  
 이 list에는 무엇이 들어갈 수 있을까? 별별놈들이 다 들어올 수 있을 것이다. `상속 extends`에는 **제한이 없으니까**.   D extends B, E extends B ...  
 이런 클래스들도 들어와 버리면 `non-generic`과 다를 바가 없으니, `type-safety`를 위해서 컬렉션에 무엇을 넣을 때는 `extends`가 허용되지 않는 것이다.
@@ -177,7 +178,8 @@ public void produce(List<? extends B> list) {
     B b = list.get(index); // 가능!!
     // 다르게 표현하면 
     B b = new C();
-    B b = new B를 상속한 모든 T(); //이게 되니까!!
+    //이게 되니까!!
+    B b = new B의 모든 하위 타입 T(); 
 }
 ```
 
@@ -190,8 +192,8 @@ public void produce(List<? super B> list) {
     B b = new A(); // 될리가 없다
 }
 ```
-
-왜때문에 PECS라고 하는지 확실히 알게 되었다.
+PECS에 대해 헷갈릴 일이 없을 것 같다. 거의 이틀 내내 매달렸으니까.  
+컬렉션 소스코드도 좀 뒤적거리고 컴파일러에 대해서도 조금은.. 알게 되었다.
 
 ~~그냥 Get하면 extends 쓰시고요, Put하면 super 쓰세요.~~
 
@@ -207,4 +209,3 @@ things.add(new Thing<>(new B()));
 things.add(new Thing<>(new C()));
 
 ```
-
