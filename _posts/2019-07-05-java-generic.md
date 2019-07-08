@@ -76,7 +76,7 @@ List<? extends B> list = new ArrayList<>();
 
 `extends`키워드가 있으면 아무것도 안들어간다?????????
 
-이리저리 구글링해봤다. 거의 "Producer면 extends하고 Consumer면 super 해" 라는 내용이었다. 아니, 왜 그러는데?
+이리저리 구글링해봤다. 거의 "Producer면 extends하고 Consumer면 super 해" 라는 내용이었다. **아 됐고, 대체 왜 그러는데?**
 
 
 
