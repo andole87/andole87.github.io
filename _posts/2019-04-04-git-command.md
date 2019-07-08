@@ -1,8 +1,8 @@
 ---
 published: true
 layout: single
-title: "git - 초급"
-category: Git
+title: "[Git] git - 초급"
+category: CS
 comments: true
 ---
 
