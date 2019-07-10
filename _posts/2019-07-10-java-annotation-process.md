@@ -22,15 +22,15 @@ comments: true
 2. Create Annotation Parser classes.
 3. Add Annotations in your project.
 4. Compile, and Annotation Parsers will handle the Annotations.
-5. Auto-generated classes will added in build folder.
+5. Auto-generated classes will added in build folder.  
 
-1. 어노테이션 클래스를 생성한다.
-2. 어노테이션 파서 클래스를 생성한다.
-3. 어노테이션을 사용한다.
-4. 컴파일하면, 어노테이션 파서가 어노테이션을 처리한다.
-5. 자동 생성된 클래스가 빌드 폴더에 추가된다.
+> 1. 어노테이션 클래스를 생성한다.
+> 2. 어노테이션 파서 클래스를 생성한다.
+> 3. 어노테이션을 사용한다.
+> 4. 컴파일하면, 어노테이션 파서가 어노테이션을 처리한다.
+> 5. 자동 생성된 클래스가 빌드 폴더에 추가된다.
 
-Annotation Parser classes는 **오직** 프로젝트를 컴파일 할 때만 필요하다. 빌드가 끝나면 쓰이지 않는다.
+Annotation Parser classes는 **오직 프로젝트를 컴파일 할 때만** 필요하다. 빌드가 끝나면 쓰이지 않는다.
 
 ## Example
 
@@ -87,14 +87,16 @@ public @interface AutoFactory {
 
 @Retention(RetentionPolicy.SOURCE)
 @Target(ElementType.TYPE)
-public @interface AutoElement {
+public @class AutoElement {
     String tag();
 }
 ```
 
-**팩토리**와 **Real Class** 를 위한 두 개의 어노테이션을 정의했다. `@Retention`은 어노테이션의 라이프사이클을 정의하는 곳이다. 관련 설정으로 `SOURCE`(**컴파일에만** 사용), `CLASS`(.class 파일로 변환될), `RUNTIME`(**런타임때** 사용)이 있다. 여기서는 컴파일에만 사용할 것이므로, `SOURCE`로 설정했다. 
+**팩토리**와 **Real Class** 를 위한 두 개의 어노테이션을 정의했다.  
 
-`@Target`은 메타 정보를 추가할 타겟의 타입의 지시자다. (is a indicator of what is our target type to annotated) `TYPE`은 클래스와 인터페이스에 사용한다.
+`@Retention`은 어노테이션의 라이프사이클을 정의하는 곳이다. 관련 설정으로 `SOURCE`(**컴파일에만** 사용), `CLASS`(.class 파일로 변환될), `RUNTIME`(**런타임때** 사용)이 있다. 여기서는 컴파일에만 사용할 것이므로, `SOURCE`로 설정했다. 
+
+`@Target`은 메타 정보를 추가할 타겟의 타입의 지시자다. (@Target is a indicator of what is our target type to annotated) `TYPE`은 클래스와 인터페이스에 사용한다.
 
 > 주) Retention은 용도, 사용처로 이해할 수 있겠고  
 > Target은 어노테이션의 타겟(클래스, 메서드, 필드, 파라미터 ...)로 이해할 수 있다.   
@@ -117,11 +119,13 @@ compile 'com.squareup:javapoet:1.10.0'
 public class AutoFactoryProcesser extends AbstractProcessor {
   @Override
   public synchronized void init(ProcessingEnvironment env) { ... }
+
   @Override
   public Set<String> getSupportedAnnotationTypes() { ... }
 
   @Override
   public SourceVersion getSupportedSourceVersion() { ... }
+
   @Override
   public boolean process(Set<? extends TypeElement> set,          
                          RoundEnvironment env) { ... }
@@ -229,27 +233,34 @@ class FactoryBuilder {
     public void generate() throws IOException {
         // 넘겨받은 HashMap은 <인터페이스 이름 AutoFactory, ArrayList<요소이름 AutoElement>>
       for (ClassName key : input.keySet()) {
+
           // 메서드를 만들어 준다. 이름은 create + 키 네임. ex) createElement
         MethodSpec.Builder methodBuilder = MethodSpec.methodBuilder("create" + key.simpleName())
+
             // 접근제어자는 public static
             .addModifiers(Modifier.PUBLIC, Modifier.STATIC)
+
             // 파라미터는 String
             .addParameter(String.class, "type")
+
             // 내부 로직은 switch(매개변수)
             .beginControlFlow("switch(type)");
+
           // switch statment 상세
         for (ElementInfo elementInfo : input.get(key)) {
+
             // AutoElement의 이름과 같으면 해당 <T> AutoElement를 생성
           methodBuilder
               .addStatement("case $S: return new $T()", elementInfo.tag, elementInfo.className);
         }
+
         // switch statment에 해당하는게 없을 경우 RuntimeException
         methodBuilder
             .endControlFlow()
             .addStatement("throw new RuntimeException(\"not support type\")")
             .returns(key);
 
-          // 헬로월드..
+          // 위에서 구성한 메서드를 갖는 클래스를 생성. 클래스 이름은 key + "Factory"
         MethodSpec methodSpec = methodBuilder.build();
         TypeSpec helloWorld = TypeSpec.classBuilder(key.simpleName() + "Factory")
             .addModifiers(Modifier.PUBLIC, Modifier.FINAL)
@@ -304,7 +315,9 @@ public final class AnimalFactory {
 적절한 어노테이션 프로세싱으로, 수많은 팩토리 클래스와 Element 클래스를 유지하는 노력을 줄일 수 있다.
 
 
-## Source Code doc
+
+
+## Source Code docs
 
 ### Retention
 ```java
