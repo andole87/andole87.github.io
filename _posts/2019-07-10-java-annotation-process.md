@@ -53,7 +53,7 @@ public class Cat implements Animal {
 }
 
 public class AnimalFactory {
-    public static Animal CreateAnimal() {
+    public static Animal CreateAnimal(String tag) {
         switch(tag) {
             case "dog":
                 return new Dog();
@@ -87,7 +87,7 @@ public @interface AutoFactory {
 
 @Retention(RetentionPolicy.SOURCE)
 @Target(ElementType.TYPE)
-public @class AutoElement {
+public @interface AutoElement {
     String tag();
 }
 ```
