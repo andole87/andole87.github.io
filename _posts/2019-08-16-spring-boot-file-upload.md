@@ -50,7 +50,6 @@ public class FileUploadController {
 이후 `MultipartFile`이 제공하는 몇가지 메서드를 사용할 수 있다.  
 
 ## 문제점
-- hashing file name
 `MultipartFile`을 `File`로 저장하는 과정에서 해시가 필요하다고 생각했다.   
 사용자가 올리는 파일을 저장할 때 이름을 그대로 사용하면 충돌의 가능성이 매우 높아진다.   
 사용자가 친절히 파일 이름을 `username-yyyy-mm-dd-checksum.jpg`로 바꾸어 올리진 않으니까.   
