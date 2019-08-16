@@ -56,9 +56,6 @@ public class FileUploadController {
 사용자가 친절히 파일 이름을 `username-yyyy-mm-dd-checksum.jpg`로 바꾸어 올리진 않으니까.   
 A도 `image.jpg`를 업로드하고 B도 `image.jpg`를 업로드하면 어떡할건데?  
 
-- 확장자
-확장자에 따라 다르게 동작시키려면? `jpg`,`png`는 `images`폴더에, `txt, pdf`는 `docs`폴더에 ...
-
 그래서 `ArgumentResolver`를 사용해봤다.
 
 ### Object Mapping
@@ -85,7 +82,7 @@ public class UploadFile {
         return originName.substring(lastIndexOf);
     }
 
-    public boolean save(Path path) {
+    public boolean save(String path) {
         try {
             file.transferTo(new File(path + "/" + hashName() + "." + extension));
             return true;
@@ -121,14 +118,19 @@ public class UploadFile {
 
 ### Custom Annotation
 
-`ArgumentResolver`를 만들기 전에, 
-
-
+`ArgumentResolver`를 만들기 전에, 애너테이션으로 파라미터를 정해주자.  
+어노테이션 프로세싱은 필요 없고 명시적으로 의미를 부여하기 위해서다.  
+```java
+@Target(ElementType.PARAMETER)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface UploadedFile {
+}
+```
+`@UploadedFile`이 붙은 파라미터에, 위에서 만든 `UploadFile` 객체를 매핑하게 해보자.  
 
 ### ArgumentResolver
 
-
-
+```java
 @Configuration
 public class UploadFileResolver implements HandlerMethodArgumentResolver {
     @Override
@@ -137,9 +139,39 @@ public class UploadFileResolver implements HandlerMethodArgumentResolver {
     }
 
     @Override
-    public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
+    public Object resolveArgument(MethodParameter parameter, 
+                                    ModelAndViewContainer mavContainer, 
+                                    NativeWebRequest webRequest, 
+                                    WebDataBinderFactory binderFactory) throws Exception {
+
         MultipartHttpServletRequest request = (MultipartHttpServletRequest) webRequest.getNativeRequest();
-        MultipartFile multipartFile = request.getFile("file");
+        MultipartFile multipartFile = request.getFile("data");
         return new UploadFile(multipartFile);
     }
 }
+```
+폼의 `data`키에 등록된 파일을 `UploadFile`객체로 매핑해준다.  
+
+인제 함 써볼까!
+
+### Controller
+```java
+@Controller
+@RequestMapping("/upload")
+public class FileUploadController {
+    private static final String PATH = "파일을_저장할_경로";
+
+    @GetMapping
+    public String uploadPage() {
+        return "upload";
+    }
+
+    @PostMapping
+    public String uploadFile(@UploadedFile UploadFile file) {
+        file.save(path);
+        return "redirect:/upload";
+    }
+}
+```
+
+해싱된 파일이 경로에 저장된다.
