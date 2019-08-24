@@ -13,7 +13,7 @@ rebase를 이용해서 브랜치를 합치고 옮기고 바꿔보자.
 
 `merge`와 `rebase` 모두 두 브랜치를 합치는 것이다. 뭐가 다를까?  
 
-**`merge`는 두 브랜치를 동시에 가리키는 `merge commit`이 새로 만드는 것이다.**  
+**`merge`는 두 브랜치를 동시에 가리키는 `merge commit`을 새로 만드는 것이다.**  
 `merge commit`을 새로 만들기 때문에, 통합될 **두 브랜치에는 아무 영향이 없다**
 
 **`rebase`는 타겟 브랜치로 현재 브랜치가 이동하는 것이다.**  
@@ -27,7 +27,7 @@ rebase를 이용해서 브랜치를 합치고 옮기고 바꿔보자.
 
 ## 기본 사용
 
-```git
+```bash
 // 현재 from 브랜치
 git rebase [합칠_브랜치_명]
 ```
@@ -40,7 +40,7 @@ git rebase [합칠_브랜치_명]
 
 ## onto 옵션
 
-```git
+```bash
 git rebase --onto [타겟_브랜치] [옮겨갈_커밋범위의_하나_이전_커밋] [옮겨갈_커밋범위의_마지막_커밋]
 ```
 
@@ -51,7 +51,7 @@ feat   : A - Z - C - D
 
 공통 커밋은 `A`이므로 `feat`브랜치의 `Z - C - D`가 옮겨갈 것이다. 그러나 `C - D`만 옮기고 싶다면? `--onto`를 사용하자.
 
-```git
+```bash
 git rebase --onto master Z D
 ```
 feat 브랜치의 C부터 D까지가 master로 옮겨간다.
@@ -62,7 +62,7 @@ feat 브랜치의 C부터 D까지가 master로 옮겨간다.
 
 `--exec`는 `rebase`커밋을 만들 때마다 인자로 전달한 커맨드를 실행한다.  
 
-```git
+```bash
 git rebase --exec [타겟_브랜치] [실행할_커맨드]
 ```
 
@@ -71,7 +71,7 @@ git rebase --exec [타겟_브랜치] [실행할_커맨드]
 
 - 커밋 작성자 바꾸기
 
-```git
+```bash
 git rebase --exec master "git commit --amend --author=\"Linus Torvalds <Linus@zzang.zzang.man>\""
 ```
 브랜치의 모든 커밋이 `master`로 이동하면서, 커밋 작성자의 이름을 "Linus Torvalds", 이메일을 "Linus@zzang.zzang.man"으로 바꾼다.
