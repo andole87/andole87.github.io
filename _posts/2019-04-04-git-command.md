@@ -1,7 +1,7 @@
 ---
 published: true
 layout: single
-title: "[Git] git - 초급"
+title: "[Git] 자주쓰는 GIT 명령어"
 category: CS
 comments: true
 ---
