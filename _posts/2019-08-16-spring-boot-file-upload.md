@@ -8,7 +8,7 @@ comments: true
 
 사용자가 업로드한 파일을 서버에 저장해봤다. 원래는 `S3`에 바로 넣으려고 했는데... `S3` AccessKey를 아직 못 받았다ㅠㅠ  
 스프링이 기본 제공하는 api는 뭔가 부족해 보여 몇가지 방법을 동원했다.    
-참고로 `common-fileupload`같은 라이브러리를 사용하지 않고, `ArgumentResolover`를 사용한다.
+참고로 `common-fileupload`같은 라이브러리를 사용하지 않고, `ArgumentResolver`를 사용한다.
 
 ## MultipartFile
 HTML `form` 태그는 클라이언트에서 서버로 데이터를 전송할 수 있게 한다.  
