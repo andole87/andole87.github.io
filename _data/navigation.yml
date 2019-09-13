@@ -6,6 +6,8 @@ main:
     url: /categories/
   - title: Idea
     url: /idea/
+  - title: Spring
+    url: /spring/
   - title: CS
     url: /cs/
   - title: "TIL"
