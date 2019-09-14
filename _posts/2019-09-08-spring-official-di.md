@@ -7,7 +7,7 @@ comments: true
 ---
 
 우아한테크코스에서 스프링을 처음 사용해봤다. 짧은 기간동안 스프링으로 미션을 진행해야 했다. 아쉬운 부분이 많아 방학을 기다려 공식문서를 읽어보았다.  
-공식 문서에는 [`Core Technologies`](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html) 섹션이 있었고, 관심있는 주제들이 많았다. 양이 상당했지만 그럭저럭 읽을 만 했다. 혼자만 읽기에는 아까워서 ~~발번역~~을 남겨본다.  
+공식 문서에는 [`Core Technologies`](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html) 섹션이 있었고, 관심있는 주제들이 많았다. 양이 상당해 필요한 부분을 집중적으로 보았다. 혼자만 읽기에는 아까워서 ~~발번역~~을 남겨본다.  
 
 다음 내용은 공식 문서의 내용을 그대로 옮긴 것이 아니며, 임의로 편집 수정했음을 미리 밝힌다.  
 
