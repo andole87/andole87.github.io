@@ -4,8 +4,8 @@ main:
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "Archive"
     url: /categories/
-  - title: Idea
-    url: /idea/
+  - title: Think
+    url: /think/
   - title: Spring
     url: /spring/
   - title: CS

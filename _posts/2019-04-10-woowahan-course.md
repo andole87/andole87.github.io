@@ -2,7 +2,7 @@
 published: true
 layout: single
 title: "우아한테크코스 - 프리코스까지"
-category: Idea
+category: Think
 comments: true
 ---
 다른 일을 하며 취미로 프로그래밍을 해왔다. 2018년 말, 직업을 바꾸기로 결심했다. 그 즈음, 우아한 테크코스가 우연히 눈에 들어와 지원했다.  

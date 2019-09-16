@@ -2,7 +2,7 @@
 published: true
 layout: single
 title: "페어 프로그래밍"
-category: Idea
+category: Think
 comments: true
 ---
 

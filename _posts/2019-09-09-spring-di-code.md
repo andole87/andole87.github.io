@@ -6,7 +6,7 @@ category: Spring
 comments: true
 ---
 
-[스프링 공식문서 읽기](/spring/spring-di/)에 이어 코드로 스프링 컨테이너의 동작을 알아본다.
+[스프링 공식문서 읽기](/spring/spring-offical-di/)에 이어 코드로 스프링 컨테이너의 동작을 알아본다.
 
 # SpringBootApplication
 

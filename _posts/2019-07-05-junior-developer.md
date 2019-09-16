@@ -2,7 +2,7 @@
 published: true
 layout: single
 title: "삽질하고, 질문하고, 알아내고, 공유하라"
-category: Idea
+category: Think
 comments: true
 ---
 
