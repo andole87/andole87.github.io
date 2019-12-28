@@ -73,8 +73,9 @@ $darker-gray: mix(#000, $gray, 60%) !default;
 $light-gray: mix(#fff, $gray, 50%) !default;
 $lighter-gray: mix(#fff, $gray, 90%) !default;
 $background-color: #fff !default;
-$code-background-color: #ff6f613d !default;
+$code-background-color: #d4cbcb3d !default;
 $code-background-color-dark: $light-gray !default;
+$code-font-color: #5a17a2e0 !default;
 $text-color: $dark-gray !default;
 $muted-text-color: mix(#fff, $text-color, 35%) !default;
 $border-color: $lighter-gray !default;
@@ -171,9 +172,9 @@ $x-large: 1280px !default;
 // $right-sidebar-width-narrow: 200px !default;
 $right-sidebar-width-narrow: 50px !default;
 // $right-sidebar-width: 300px !default;
-$right-sidebar-width: 70px !default;
+$right-sidebar-width: 150px !default;
 // $right-sidebar-width-wide: 400px !default;
-$right-sidebar-width-wide: 200px !default;
+$right-sidebar-width-wide: 300px !default;
 
 /*
       Other
