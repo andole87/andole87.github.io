@@ -7,14 +7,14 @@ comments: true
 ---
 
 스프링 부트 프로젝트에서 MySQL 설정하느라 반나절 삽질했다.  
-`dependancy`부터 `application.properties`까지 정리해본다.
+`dependency`부터 `application.properties`까지 정리해본다.
 
 ## Gradle
 `build.gradle`
 ```gradle
-dependancy { 
+dependency { 
     implementation 'org.springframework.boot:spring-boot-data-jpa' //JPA 사용
-    implementation 'mysql:mysql-connector-java'
+    runtimeOnly 'mysql:mysql-connector-java'
 }
 ```
 
@@ -40,7 +40,7 @@ spring.datasource.password=[Database Password]
 `build.gradle`
 
 ```gradle
-dependancy {
+dependency {
     implementation 'com.h2database:h2'
 }
 ```
