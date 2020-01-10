@@ -11,6 +11,7 @@ html {
 body {
     margin: 0;
     padding: 0;
+    background-color: #ffffff;
     color: $text-color;
     font-family: $global-font-family;
     line-height: 1.8;
@@ -110,6 +111,7 @@ abbr[data-original-title] {
 /* blockquotes */
 
 blockquote {
+    background-color: #f1f8ff;
     margin: 2em 1em 2em 0;
     padding-left: 1em;
     padding-right: 1em;

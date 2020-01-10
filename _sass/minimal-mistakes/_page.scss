@@ -69,8 +69,12 @@
         padding-bottom: 0.5em;
         border-bottom: 1px solid $border-color;
     }
-    p,
-    li,
+    p {
+        font-size: $type-size-5;
+    }
+    li {
+        font-size: $type-size-6
+    }
     dl {
         font-size: $type-size-7;
     }
@@ -87,7 +91,7 @@
     }
     a:not(.btn) {
         &:hover {
-            text-decoration: underline;
+            text-decoration: underline overline;
             img {
                 box-shadow: 0 0 10px rgba(#000, 0.25);
             }
