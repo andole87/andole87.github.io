@@ -2,7 +2,7 @@
 published: true
 layout: single
 title: "Spring Boot ArgumentResolver - Request 객체 매핑"
-category: TIL
+category: Spring
 comments: true
 ---
 

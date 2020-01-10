@@ -8,10 +8,15 @@ main:
     url: /think/
   - title: Spring
     url: /spring/
-  - title: CS
-    url: /cs/
-  - title: "TIL"
-    url: /til/
+  - title: Java
+    url: /java/
+  - title: ETC
+    url: /etc/
+  
+    # - title: CS
+  #   url: /cs/
+  # - title: "TIL"
+  #   url: /til/
   # - title: ""
   #   url: /there
   # - title: "Sample Posts"

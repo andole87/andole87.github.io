@@ -2,7 +2,7 @@
 published: true
 layout: single
 title: "Spring Boot Controller Advice - 컨트롤러 예외처리"
-category: TIL
+category: Spring
 comments: true
 ---
 

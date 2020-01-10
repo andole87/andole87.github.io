@@ -2,7 +2,7 @@
 published: true
 layout: single
 title: "Spring Boot Logger - HTTP 통신 로그 logback-access"
-category: TIL
+category: Spring
 comments: true
 ---
 스프링 프로젝트를 로컬에서 실행해보면, 콘솔창에 주루룩 무언가 표시된다. 

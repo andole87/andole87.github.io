@@ -2,7 +2,7 @@
 published: true
 layout: single
 title: "Spring Boot 파일 업로드"
-category: TIL
+category: Spring
 comments: true
 ---
 

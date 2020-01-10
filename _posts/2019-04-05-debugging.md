@@ -2,7 +2,7 @@
 published: true
 layout: single
 title: "디버깅과 콜스택"
-category: CS
+category: ETC
 comments: true
 ---
 

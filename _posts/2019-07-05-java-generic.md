@@ -2,7 +2,7 @@
 published: true
 layout: single
 title: "[Java] Generic - PECS"
-category: TIL
+category: JAVA
 comments: true
 ---
 

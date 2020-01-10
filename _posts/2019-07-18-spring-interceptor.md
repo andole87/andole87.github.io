@@ -2,7 +2,7 @@
 published: true
 layout: single
 title: "Spring Boot Login 구현 - Interceptor"
-category: TIL
+category: Spring
 comments: true
 ---
 

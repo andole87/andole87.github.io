@@ -2,7 +2,7 @@
 published: true
 layout: single
 title: "자바스크립트 비동기 동작 원리"
-category: TIL
+category: ETC
 comments: true
 ---
 자바스크립트에서 비동기 처리(Non-blocking, Async 등)는 자주 언급되는 주제이다. 자바스크립트만 비동기로 동작할 수 있는 것은 아니다. 다른 언어들 모두 비동기로 동작하게 만들 수 있다. 그런데 왜 자바스크립트에서 많이 언급될까?   

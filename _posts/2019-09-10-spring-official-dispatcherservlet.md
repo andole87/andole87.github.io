@@ -51,22 +51,7 @@ DispatcherServlet은 다음 표에 있는 빈들을 사용한다.
 
 서블릿 3.0 이상의 환경에서, 서블릿 컨테이너를 `web.xml` 대신 프로그래밍적으로 설정할 수 있다.
 
-```java
-import org.springframework.web.WebApplicationInitializer;
-
-public class MyWebApplicationInitializer implements WebApplicationInitializer {
-
-    @Override
-    public void onStartup(ServletContext container) {
-        XmlWebApplicationContext appContext = new XmlWebApplicationContext();
-        appContext.setConfigLocation("/WEB-INF/spring/dispatcher-config.xml");
-
-        ServletRegistration.Dynamic registration = container.addServlet("dispatcher", new DispatcherServlet(appContext));
-        registration.setLoadOnStartup(1);
-        registration.addMapping("/");
-    }
-}
-```
+{% gist andole87/481fd05e45230ce35080781466416e39 %}
 
 `WebApplicationInitializer` 는 Servlet3 컨테이너를 시작하기 위해 제공되는 인터페이스다. `AbstractDispatcherServletInitializer`는 이 인터페이스를 구현하는 기본 템플릿이다. 더 쉬운 자동 설정을 지원한다.
 

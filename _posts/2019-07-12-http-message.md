@@ -2,7 +2,7 @@
 published: true
 layout: single
 title: "[HTTP] http 메시지 흐름"
-category: TIL
+category: ETC
 comments: true
 ---
 

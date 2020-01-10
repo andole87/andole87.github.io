@@ -2,7 +2,7 @@
 published: true
 layout: single
 title: "[Git] 자주쓰는 GIT 명령어"
-category: CS
+category: ETC
 comments: true
 ---
 

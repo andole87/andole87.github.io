@@ -2,7 +2,7 @@
 published: true
 layout: single
 title: "Spring Boot MySQL 연결"
-category: TIL
+category: Spring
 comments: true
 ---
 

@@ -2,7 +2,7 @@
 published: true
 layout: single
 title: "[Git] git - Head Operator"
-category: CS
+category: ETC
 comments: true
 ---
 

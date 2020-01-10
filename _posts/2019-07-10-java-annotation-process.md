@@ -2,7 +2,7 @@
 published: true
 layout: single
 title: "[Java] 어노테이션 프로세싱 - 어노테이션은 어떻게 동작하나?"
-category: TIL
+category: JAVA
 comments: true
 ---
 

@@ -2,7 +2,7 @@
 published: true
 layout: single
 title: "js 배열 메서드"
-category: TIL
+category: ETC
 comments: true
 ---
 

@@ -2,7 +2,7 @@
 published: true
 layout: single
 title: "깃허브 블로그 만들기: minimal-mistakes 테마-1"
-category: WEB
+category: ETC
 comments: true
 ---
 
