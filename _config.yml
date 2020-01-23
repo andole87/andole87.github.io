@@ -194,7 +194,7 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 # Conversion
 markdown: kramdown
 highlighter: rouge
-lsi: false
+lsi: true
 excerpt_separator: "\n\n"
 incremental: false
 
@@ -287,11 +287,12 @@ defaults:
       path: ""
       type: posts
     values:
+      published: true
       layout: single
       author_profile: false
       read_time: true
-      comments: # true
+      comments: true
       share: true
       related: true
 
-github: [metadata]
+github: []
