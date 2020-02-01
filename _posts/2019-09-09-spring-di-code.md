@@ -29,7 +29,7 @@ comments: true
 
 ## BeanDefinition
 
-{% gist andole87/1033bdf794c38ce46ddbd752538e73e2 %}
+{% gist andole98/1033bdf794c38ce46ddbd752538e73e2 %}
 
 코드 어디에서도 `BeanA` 를 생성하지 않았음에도 `BeanA` 를 사용할 수 있다.
 
@@ -43,7 +43,7 @@ org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating 
 
 ## registerSingleton
 
-{% gist andole87/6da14ece6afc9b97d4f829d787b4ed3c %}
+{% gist andole98/6da14ece6afc9b97d4f829d787b4ed3c %}
 
 이번에는 `BeanA` 를 직접 생성하고, `BeanFactory` 에 수동 등록했다. 똑같은 결과가 나오긴 하지만, `BeanDefinition`을 사용했을 때 보았던 로그가 없다. 컨테이너가 스스로 빈을 만들지 않았다는 뜻이다.
 
@@ -58,7 +58,7 @@ org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating 
 
 `@ComponentScan` 애너테이션으로 ApplicationContext를 구성하려면 `GenericApplicationContext` 대신 `AnnotatedConfigApplicationContext` 구현체를 사용해야 한다.
 
-{% gist andole87/8857202e33eaf6db679d37b719fb2a0a %}
+{% gist andole98/8857202e33eaf6db679d37b719fb2a0a %}
 
 수동으로 작업했던 것과 똑같이 수행된다. 
 

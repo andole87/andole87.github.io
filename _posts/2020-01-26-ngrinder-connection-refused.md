@@ -22,7 +22,7 @@ nGrinder 에이전트에서 타겟으로 부하를 생성할 때, Connection ref
 
 application.yml에서 설정하면 된다.  
 
-{% gist andole87/7f2a0bd5726138b03932dab09334c17e %}
+{% gist andole98/7f2a0bd5726138b03932dab09334c17e %}
 
 서버를 다시 띄우고 테스트해봐도 같은 증상이 발생했다. 이번엔 테스트 도중 클라이언트와 서버의 netstat을 모니터링 해봤다.  
 요청을 보내는 쪽, 즉 nGrinder 클라이언트는 macOs다. `netstat -a -p tcp | grep 192.168.100.2` 로 확인했다.  

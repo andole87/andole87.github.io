@@ -8,7 +8,7 @@ category: "JAVA"
 
 일련의 문자열 리스트를 맵으로 바꾸는 코드를 생각해보자. 맵의 키에는 문자열이, 값에는 문자열 빈도를 집계해보자.  
 
-{% gist andole87/39aa09012496546d9f5d42da834c2cd7 %}
+{% gist andole98/39aa09012496546d9f5d42da834c2cd7 %}
 
 `Function.identity()` 는 `x -> x` 와 같다.  
 어떤가? 코드가 많이 짧아졌다. 좀더 해볼까?  
@@ -17,7 +17,7 @@ category: "JAVA"
 
 이번에는 primary 타입이 아닌, 객체 리스트에서 속성에 따라 그루핑해보자. 키에는 객체 속성 하나가, 값에는 객체 리스트를 넣는다. 
 
-{% gist andole87/a13950e55a27839f9f8cf1bd4b720fa1 %}
+{% gist andole98/a13950e55a27839f9f8cf1bd4b720fa1 %}
 
 ..어떤가? 좀더 해볼까?  
 
@@ -25,7 +25,7 @@ category: "JAVA"
 
 `Coder` 리스트에서 언어별로 한번 그룹하고 경력기간별로 다시 그루핑해보자. 
 
-{% gist andole87/98603ff6715ab903945f4477d9ae4e0f %}
+{% gist andole98/98603ff6715ab903945f4477d9ae4e0f %}
 
 ...어떤가? 좀더 해볼까? 
 
@@ -33,7 +33,7 @@ category: "JAVA"
 
 `Coder` 리스트에서 언어별로 평균 임금을 계산해보자. 
 
-{% gist andole87/1ece441c598d36d61e6e65e3dbfae150 %}
+{% gist andole98/1ece441c598d36d61e6e65e3dbfae150 %}
 
 정말 짧아졌다. 일반적으로 집계 로직은 대단한 건 없지만 상당히 피곤한 작업이다. 변수를 잘 파악해가며 코딩해야 하고 또 작성할 코드가 많다.  
 **명령형** 패러다임의 한계다. 자료구조와 데이터를 직접 제어해야 하므로 키에는 뭘 넣을건지, 어떻게 값을 누적시킬건지 등을 모두 명시해야 한다. 원하는 대로 동작시키려면 코드가 길어지고 읽기 어려워진다. 
@@ -51,13 +51,13 @@ category: "JAVA"
 관광정보를 위한 프로젝트다. 지역(Region)에 따라 여러 관광 프로그램(Program)이 있을 수 있다.  
 비슷하게 잘 알려진 Order, OrderItem 등에도 적용할 수 있을 것 같다.
 
-{% gist andole87/0466e07886b2b91ff079cb4f89dc272f %}
+{% gist andole98/0466e07886b2b91ff079cb4f89dc272f %}
 
 csv 파일에서 레코드를 읽어와서 관광 정보를 구성해야 했다. 한 레코드별로 하나씩 파싱해서 처리하려니까 너무 괴로웠다. 코드가 길어졌다. 메서드를 나누고 클래스를 나눈다 해도 코드량이 너무 길었다.  
 특히 한 Region에 여러 프로그램이 있을 수 있다는 것을 만족하기가 어려웠다. 한줄한줄 파싱 처리하면 같은 Region인데도 중복 저장될 수 있으니까. `HashMap<Region, List<Program>>` 이면 중복 지역은 하나로 줄어들고 해당하는 프로그램을 처리할 수 있겠다 싶었다.  
 Region에서 `equals(), hashCode()` 를 재정의하고 Tour 생성자 로직에서 Region과 Program을 만들도록 했다. 한 레코드당 하나의 관광정보니까. `List<String>` 을 중간에 `List<Tour>` 를 거쳐 `Map<Region, List<Program>>`으로 변환했다.
 
-{% gist andole87/b6293bc07c003e7a25b1c127c35381e6 %}
+{% gist andole98/b6293bc07c003e7a25b1c127c35381e6 %}
 
 ... 엄청나게 짧아져서 `groupingBy`를 공부하게 된 계기가 되었다.
 
@@ -70,6 +70,6 @@ Region에서 `equals(), hashCode()` 를 재정의하고 Tour 생성자 로직에
 스트림을 쓰면 어떨까 해서 적용해봤다.  
 `Music` 객체로 인덱스, 장르, 플레이 수를 매핑했다. 정렬을 위해 `Comparable<Music>`도 구현했다.  
 
-{% gist andole87/9fb5f7b6244e9fe3462e01776121997f %}
+{% gist andole98/9fb5f7b6244e9fe3462e01776121997f %}
 
 좀 복잡하긴 한데... 일반적으로 푸는 것보다 훨씬 알아보기 쉽다고 생각한다. 

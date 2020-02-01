@@ -51,15 +51,15 @@ DispatcherServlet은 다음 표에 있는 빈들을 사용한다.
 
 서블릿 3.0 이상의 환경에서, 서블릿 컨테이너를 `web.xml` 대신 프로그래밍적으로 설정할 수 있다.
 
-{% gist andole87/481fd05e45230ce35080781466416e39 %}
+{% gist andole98/481fd05e45230ce35080781466416e39 %}
 
 `WebApplicationInitializer` 는 Servlet3 컨테이너를 시작하기 위해 제공되는 인터페이스다. `AbstractDispatcherServletInitializer`는 이 인터페이스를 구현하는 기본 템플릿이다. 더 쉬운 자동 설정을 지원한다.
 
-{% gist andole87/73d0edf1b7f49d725e21ddceef578622 %}
+{% gist andole98/73d0edf1b7f49d725e21ddceef578622 %}
 
 `AbstractDispatcherServletInitializer`는 `Filter` 객체를 편리하게 추가하는 것도 지원한다.
 
-{% gist andole87/0b232d970519dd3546d12d93bdfe5f2d %}
+{% gist andole98/0b232d970519dd3546d12d93bdfe5f2d %}
 
 ## Processing
 
