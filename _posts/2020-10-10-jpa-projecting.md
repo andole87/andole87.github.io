@@ -11,7 +11,7 @@ category: "Spring"
 
 ## 상황
 
-```
+```java
 public class Order {
 	...
 }
@@ -99,7 +99,7 @@ FetchType.LAZY로 변경하면 어떻게 될까? TwoPhaseLoad에서는 조건문
 
 즉, EntityManager.createQuery() 부분에서 다른 처리가 들어간다.
 
-```
+```java
 org.springframework.data.jpa.repository.query.AbstractJpaQuery
 
 ...
@@ -120,7 +120,7 @@ protected Query createQuery(JpaParametersParameterAccessor parameters) {
 
 EntityGraph가 설정된 쿼리는 다음과 같다.
 
-```
+```sql
 SELECT order.id, item.id, item.price, item.order_id 
 FROM ITEM item 
 LEFT JOIN ORDER order ON item.id = order.id 
@@ -135,7 +135,7 @@ WHERE item.price > :price
 
 가장 일반적인 방법이다. 커스텀 레포지터리를 만들고 JPQL을 직접 작성하는 것이다.
 
-```
+```sql
 SELECT i FROM Item i INNER JOIN FETCH i.order WHERE i.price > :price
 ```
 
@@ -145,7 +145,7 @@ EntityGraph와 마찬가지로 TwoPhaseLoader에서 추가 수행할 작업이 �
 
 이게 왜 되는지 궁금해서 위 모든 것을 알아보게 되었다. 쿼리 메서드가 엔터티를 반환하지 않고, 다른 타입을 반환하게 만드는 것이다. JPA에서는 Projecting이라고 부른다. 가져온 엔터티를 가지고 리턴 타입으로 투영 or 주입한다.
 
-```
+```java
 public interface ItemMapping {
 	Order getOrder();
 	BigDecimal getPrice();
