@@ -21,11 +21,13 @@ IoC Container의 토대는 `org.springframework.beans`, `org.springframework.con
 
 `ApplicationContext`는 `BeanFactory`의 하위 인터페이스다. `ApplicationContext`는 `BeanFactory`에 다음 기능을 추가한다.
 
+
 - `Spring AOP`와의 통합을 제공
 
 - `MessageResource` 핸들링
 
 - 웹 어플리케이션에서 사용되는 `WebApplicationContext`처럼 Application-layer의 구체적인 context를 제공한다. 
+
 
 요약하면, `BeanFactory`는 프레임워크의 기본 설정과 기능을 제공한다. `ApplicationContext`는 이에 구체적인 비즈니스 기능을 추가한다.
 
@@ -234,14 +236,14 @@ bean definition을 정의하면 대상 클래스의 실제 인스턴스를 만�
 
 빈은 여러가지 스코프를 가질 수 있다. 스프링에서 기본으로 제공하는 것은 6개이며, 이중 4개는 웹 어플리케이션에서만 사용 가능하다.
 
-| Scope       | Description                                                         |
-| ----------- | ------------------------------------------------------------------- |
-| singleton   | (기본값) 하나의 컨테이너에 하나의 인스턴스만 존재한다.                                     |
-| prototype   | 모든 빈 인스턴스에 각 하나씩 존재한다.                                              |
+| Scope       | Description                                                                                                  |
+| ----------- | ------------------------------------------------------------------------------------------------------------ |
+| singleton   | (기본값) 하나의 컨테이너에 하나의 인스턴스만 존재한다.                                                       |
+| prototype   | 모든 빈 인스턴스에 각 하나씩 존재한다.                                                                       |
 | request     | 각 HTTP 요청 라이프사이클당 하나의 인스턴스가 존재한다. 즉, 각각 HTTP 요청에 대해서 해당 빈을 하나씩 가진다. |
-| session     | 각 HTTP Session 라이프사이클당 하나의 인스턴스가 존재한다.                              |
-| application | ServletContext 라이프사이클당 하나의 인스턴스가 존재한다.                              |
-| websocket   | WebSocket 라이프사이클당 하나의 인스턴스가 존재한다.                                   |
+| session     | 각 HTTP Session 라이프사이클당 하나의 인스턴스가 존재한다.                                                   |
+| application | ServletContext 라이프사이클당 하나의 인스턴스가 존재한다.                                                    |
+| websocket   | WebSocket 라이프사이클당 하나의 인스턴스가 존재한다.                                                         |
 
 > 스프링 3.0부터 thread scope도 가능하다. 스프링 4.2부터는 transaction scope도 가능하다.
 

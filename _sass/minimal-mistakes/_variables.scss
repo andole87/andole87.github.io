@@ -12,7 +12,7 @@ $doc-font-size: 12 !default;
 /* paragraph indention */
 
 $paragraph-indent: false !default; // true, false (default)
-$indent-var: 1.3em !default;
+$indent-var: 1em !default;
 
 /* system typefaces */
 
@@ -57,7 +57,7 @@ $caption-font-family: $serif !default;
 $type-size-1: 2.441em !default; // ~39.056px
 $type-size-2: 1.953em !default; // ~31.248px
 $type-size-3: 1.563em !default; // ~25.008px
-$type-size-4: 1.5em !default; // ~20px
+$type-size-4: 1.4em !default; // ~20px
 $type-size-5: 0.8em !default; // ~16px
 $type-size-6: 1em !default; // ~12px
 $type-size-7: 0.75em !default; // ~11px
@@ -74,9 +74,9 @@ $darker-gray: mix(#000, $gray, 60%) !default;
 $light-gray: mix(#fff, $gray, 50%) !default;
 $lighter-gray: mix(#fff, $gray, 90%) !default;
 $background-color: #fff !default;
-$code-background-color: #d4cbcb3d !default;
+$code-background-color: $background-color !default;
 $code-background-color-dark: $light-gray !default;
-$code-font-color: #5a17a2e0 !default;
+$code-font-color: #FF6F61 !default;
 $text-color: $dark-gray !default;
 $muted-text-color: mix(#fff, $text-color, 35%) !default;
 $border-color: $lighter-gray !default;

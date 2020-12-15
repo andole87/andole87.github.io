@@ -12,13 +12,13 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "mint" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "2021" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "ko-KR"
 title                    : "Y++"
 title_separator          : "-"
-name                     : "빼빼"
+name                     : "andole"
 description              : ""
 url                      : #"https://andole87.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : #"/blog" # the subpath of your site, e.g. "/blog"
@@ -106,7 +106,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "andole87"
+  name             : "andole98"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "명상은 끝났다"
   #location         : "Somewhere"
